@@ -22,7 +22,7 @@
 	"moment-timezone": "0.5.14",
 	"rxjs": "5.5.5",
 	"zone.js": "0.8.18",
-	"@emias-kpi/core":"git+https://vcs.emias.mos.ru/scm/git/fb/core-enviroment#master",
+	"@emias-kpi/core":"git+https://vcs.emias.mos.ru/scm/git/fb/core-enviroment#/master",
 	"@emias-kpi/kpi-resources": "git+https://vcs.emias.mos.ru/scm/git/fb/kpi-resources/#master"
   }
   
