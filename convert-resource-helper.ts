@@ -137,7 +137,7 @@ export class ConvertResourceHelper {
 		return {
 			basicResourceId: basicResource.getResourceId(),
 			basicResourceType: BasicResourceType[basicResource.getType().toString()],
-			determinant: basicResource.isDeterminant(),
+			...basicResource.isDeterminant() ? {determinant: true} : {},
 		}
 	}
 
