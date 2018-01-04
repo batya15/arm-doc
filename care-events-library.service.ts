@@ -172,7 +172,14 @@ export class CareEventsLibraryService {
 	public getCareEventsByResource(params: IGetCareEventsByResourceParams, pagingOptions: IPagingOptionsParams = null): Observable<ICareEventResultPageData> {
 		return this.connector.getCareEventsByResource(
 			CareEventsLibraryService.parseAdditionalParams({resource: ConvertResourceHelper.convertCompositeToRequest(params.resource)}, params, pagingOptions)
-			).map((res: IGetCareEventsByResourceResponse) => CareEventsLibraryService.getInstanceCareEventsPage({results: res.results}));
+			).map((res: IGetCareEventsByResourceResponse) => CareEventsLibraryService.getInstanceCareEventsPage({results: res.results}))
+			.catch((e: ExceptionInfo) => {
+				if (e.getExceptions().every(i => i.getCode() === 'UE024')) {
+					return Observable.of([])
+				} else {
+					return Observable.throw(e);
+				}
+			})
 	}
 
 	/**
