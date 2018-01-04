@@ -175,7 +175,15 @@ export class CareEventsLibraryService {
 			).map((res: IGetCareEventsByResourceResponse) => CareEventsLibraryService.getInstanceCareEventsPage({results: res.results}))
 			.catch((e: ExceptionInfo) => {
 				if (e.getExceptions().every(i => i.getCode() === 'UE024')) {
-					return Observable.of([])
+					return Observable.of({
+						careEvents: [],
+						pagingResult: {
+							morePagesAvailable: false,
+							pageNumber: pagingOptions? pagingOptions.pageNumber : 0,
+							pageSize: pagingOptions? pagingOptions.pageSize : 0,
+							pageTotal: 0
+						}
+					})
 				} else {
 					return Observable.throw(e);
 				}
