@@ -8,5 +8,5 @@ export enum CareEventTypes {
 	WORK_WITH_PATIENT_WITHOUT_MEETING = 'WORK_WITH_PATIENT_WITHOUT_MEETING', /* (тип 1.3) Работа врача (фельдшера, акушера) с пациентом вне приема; */
 	MEETING_WITH_DOCTOR_AT_HOME = 'MEETING_WITH_DOCTOR_AT_HOME', /* (тип 2.1) Вызов врача на дом; */
 	CONDUCTING_DIAGNOSTIC_TEST = 'CONDUCTING_DIAGNOSTIC_TEST', /* (тип 6.1) Проведение инструментального исследования; */
-	DESCRIBING_DIAGNOSTIC_TEST = 'CONDUCTING_DIAGNOSTIC_TEST' /* (тип 6.2) Описание результатов инструментального исследования */
+	DESCRIBING_DIAGNOSTIC_TEST = 'DESCRIBING_DIAGNOSTIC_TEST' /* (тип 6.2) Описание результатов инструментального исследования */
 }
