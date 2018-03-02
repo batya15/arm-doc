@@ -28,6 +28,8 @@ import { IAddBasicResourceToCareEventResponse } from '../types/IAddBasicResource
 import { IAddBasicResourceToCareEventRequest } from '../types/IAddBasicResourceToCareEventRequest';
 import { IGetCareEventTypesParamsResponse } from '../types/IGetCareEventTypesParamsResponse';
 import { IGetCareEventCancellationReasonsResponse } from '../types/IGetCareEventCancellationReasonsResponse';
+import { IGetCareEventsInfoRequest } from '../types/get-care-events-info-request.interface.generated';
+import { IGetCareEventsInfoResponse } from '../types/get-care-events-info-response.interface.generated';
 
 
 
@@ -114,7 +116,11 @@ export abstract class CareEventPT<T> {
 		return this.http.request<IGetCareEventTypesParamsResponse>('POST', this.path + '/getCareEventTypesParams.api', {body: params})
 		.catch(err => Observable.throw(this.parseError(err)));
 	}
-	
+
+	public getCareEventsInfo(params: IGetCareEventsInfoRequest): Observable<IGetCareEventsInfoResponse> {
+		return this.http.request<IGetCareEventTypesParamsResponse>('POST', this.path + '/getCareEventsInfo.api', {body: params})
+			.catch(err => Observable.throw(this.parseError(err)));
+	}	
 
 }
 

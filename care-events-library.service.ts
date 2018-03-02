@@ -44,6 +44,8 @@ import {ICareEventCancellationReasonData} from './models/output/care-event-cance
 import {ExceptionInfo} from '@emias-kpi/core/frontend/src/core/exception/exception-info.model';
 import {Exception} from '@emias-kpi/core/frontend/src/core/exception/exception.model';
 import {ICareEventHistoryRecord} from './connector/generated/emias/supp_careevents/v2/careeventsservice/types/ICareEventHistoryRecord';
+import {IGetCareEventsInfoRequest} from './connector/generated/emias/supp_careevents/v2/careeventsservice/types/get-care-events-info-request.interface.generated';
+import {IGetCareEventsInfoResponse} from './connector/generated/emias/supp_careevents/v2/careeventsservice/types/get-care-events-info-response.interface.generated';
 
 
 /* tslint:enable:max-line-length */
@@ -310,6 +312,16 @@ export class CareEventsLibraryService {
 			.map((res: IGetCareEventTypesParamsResponse) => {
 				return res.careEventTypeParam.map((i: ICareEventTypesParams): ICareEventTypesParamsData => CareEventsLibraryService.convertTypesParamsData(i));
 			});
+	}
+
+	/**
+	 * Список идентификаторов клинических событий
+	 * Метод возвращает информацию о клинических событиях
+	 * @param {IGetCareEventsInfoRequest} params
+	 * @returns {Observable<IGetCareEventsInfoResponse>}
+	 */
+	public getCareEventsInfo(params: IGetCareEventsInfoRequest): Observable<IGetCareEventsInfoResponse> {
+		return this.connector.getCareEventsInfo(params);
 	}
 
 
