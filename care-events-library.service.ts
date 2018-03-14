@@ -448,11 +448,11 @@ export class CareEventsLibraryService {
 	 */
 	private static convertCancellationReason(src: ICareEventCancellationReason): ICareEventCancellationReasonData {
 		const result: ICareEventCancellationReasonData = {
-			code: src.code,
-			description: src.description
+			code: src && src.code,
+			description: src && src.description
 		};
 
-		if (src.details) {
+		if (src && src.details) {
 			Object.assign(result, {details: CareEventsLibraryService.convertCancellationReason(src.details)});
 		}
 
