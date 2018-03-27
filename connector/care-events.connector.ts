@@ -17,7 +17,7 @@ const errorMessages: ReadonlyMap<string, IException> = new Map<string, IExceptio
 		isUserFriendly: true
 	}],
 	['E003', {
-		description: 'Не удалось получить реестр принятых пациентов на выбранную дату',
+		description: 'Некорректный тип входящих данных',
 		type: 'ERROR',
 		isUserFriendly: true
 	}],
