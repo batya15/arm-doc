@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Care Events library for the EMIAS KPI products",
   "author": "KPI-DOCTOR",
-  "dependencies": {
+  "peerDependencies": {
 	"@angular/animations": "4.4.6",
 	"@angular/common": "4.4.6",
 	"@angular/compiler": "4.4.6",
