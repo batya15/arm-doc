@@ -220,7 +220,7 @@ export class CareEventsLibraryService {
 		return this.connector.getCareEventCancellationInfo({careEventId})
 			.map((res: IGetCareEventCancellationInfoResponse) => {
 				const result: ICareEventCancellationInfoData = {
-					cancellationReason: CareEventsLibraryService.convertCancellationReason(res.careEventCancellationInfo.cancellationReason)
+					cancellationReason: CareEventsLibraryService.convertCancellationReason(res.careEventCancellationInfo.cancelReason)
 				};
 
 				if (res.careEventCancellationInfo.info) {

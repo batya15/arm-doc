@@ -8,7 +8,7 @@ import { ICareEventCancellationReason } from './ICareEventCancellationReason';
  */
 export interface ICareEventCancellationInfo {
 	
-	cancellationReason: ICareEventCancellationReason; //
+	cancelReason: ICareEventCancellationReason; //
 	info?: string; //
 }
 /* tslint:enable */
