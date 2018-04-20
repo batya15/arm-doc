@@ -1,5 +1,6 @@
 import { CareEventStatuses } from './care-event-statuses.enum';
 import { Moment } from 'moment/moment';
+import { CareEventTypes } from '../common/care-event-types.enum';
 
 /**
  * Определяет набор требований к реализации типа, рассматриваемого в качестве Клинического события.
@@ -9,4 +10,5 @@ export interface ICareEvent {
     getCareEventStatus(): CareEventStatuses; // Предоставляет доступ к статусу Клинического события
     getCareEventStarted(): Moment; // Предоставляет доступ к времени начала Клинического события
     getPatientId(): number; // Предоставляет доступ к идентификатору Пациента, связанного с клиническим событием.
+    getCareEventType(): CareEventTypes; // Тип КС
 }
